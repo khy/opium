@@ -9,7 +9,10 @@ module Celluloid
       end
 
       def <<(message)
-        @history.push(message)
+        unless message.is_a?(SystemEvent)
+          @history.push(message)
+        end
+
         super
       end
     end

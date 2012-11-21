@@ -3,11 +3,11 @@ module Celluloid
     module Serialization
       module Binary
         def self.dump(object)
-          object
+          Marshal.dump(object)
         end
 
         def self.load(object)
-          object
+          Marshal.load(object)
         end
       end
 

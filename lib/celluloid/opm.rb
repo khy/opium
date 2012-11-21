@@ -2,6 +2,7 @@ require 'celluloid/opm/version'
 
 require 'celluloid'
 
+require 'celluloid/opm/call'
 require 'celluloid/opm/history'
 require 'celluloid/opm/mailbox'
 require 'celluloid/opm/serialization'
