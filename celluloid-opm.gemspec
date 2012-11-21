@@ -17,6 +17,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
 
   gem.add_dependency 'celluloid'
+  gem.add_dependency 'oj'
 
   gem.add_development_dependency 'rspec'
 end

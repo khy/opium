@@ -3,11 +3,11 @@ module Celluloid
     module Serialization
       module JSON
         def self.dump(object)
-          object
+          Oj.dump(object, mode: :object)
         end
 
         def self.load(object)
-          object
+          Oj.load(object, mode: :object)
         end
       end
     end

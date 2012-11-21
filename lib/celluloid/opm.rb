@@ -1,6 +1,7 @@
 require 'celluloid/opm/version'
 
 require 'celluloid'
+require 'oj'
 
 require 'celluloid/opm/call'
 require 'celluloid/opm/history'

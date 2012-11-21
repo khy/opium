@@ -10,7 +10,7 @@ module Celluloid
       }
 
       def self.default
-        Binary
+        JSON
       end
     end
   end
