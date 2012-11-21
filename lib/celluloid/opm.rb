@@ -4,6 +4,7 @@ require 'celluloid'
 
 require 'celluloid/opm/history'
 require 'celluloid/opm/mailbox'
+require 'celluloid/opm/serialization'
 require 'celluloid/opm/store'
 
 module Celluloid
