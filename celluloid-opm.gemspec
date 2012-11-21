@@ -1,11 +1,11 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'celluloid-opm/version'
+require 'celluloid/opm/version'
 
 Gem::Specification.new do |gem|
   gem.name          = 'celluloid-opm'
-  gem.version       = Celluloid::Opm::VERSION
+  gem.version       = Celluloid::OPM::VERSION
   gem.authors       = ['Kevin Hyland']
   gem.email         = ['khy@me.com']
   gem.description   = 'Simple object prevalence for Celluloid'
