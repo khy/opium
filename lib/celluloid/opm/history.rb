@@ -1,19 +1,20 @@
 module Celluloid
   module OPM
     class History
-      def initialize(store)
-        @store = store
+      def initialize(store = nil, serialization = nil)
+        @store = store || Store.default
+        @serialization = serialization || Serialization.default
       end
 
       def push(call)
         opm_call = OPM::Call.for(call)
-        serialized_call = Serialization::Binary.dump(opm_call)
+        serialized_call = @serialization.dump(opm_call)
         @store.push serialized_call
       end
 
       def pop
         serialized_call = @store.pop
-        Serialization::Binary.load(serialized_call)
+        @serialization.load(serialized_call)
       end
     end
   end

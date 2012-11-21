@@ -5,7 +5,6 @@ module Celluloid
         include Store
 
         def initialize(opts = {})
-          super
           @array = []
         end
 

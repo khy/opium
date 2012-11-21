@@ -1,24 +1,16 @@
+require 'celluloid/opm/serialization/binary'
+require 'celluloid/opm/serialization/json'
+
 module Celluloid
   module OPM
     module Serialization
-      module Binary
-        def self.dump(object)
-          Marshal.dump(object)
-        end
+      BUILT_IN_TYPES = {
+        binary: Binary,
+        json:   JSON
+      }
 
-        def self.load(object)
-          Marshal.load(object)
-        end
-      end
-
-      module JSON
-        def self.dump(object)
-          object
-        end
-
-        def self.load(object)
-          object
-        end
+      def self.default
+        Binary
       end
     end
   end

@@ -7,14 +7,8 @@ module Celluloid
         memory: Memory
       }
 
-      def initialize(opts = {})
-        @opts = opts
-      end
-
-      def push(message)
-      end
-
-      def pop
+      def self.default
+        Memory.new
       end
     end
   end
