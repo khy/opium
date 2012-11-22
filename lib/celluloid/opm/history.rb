@@ -3,20 +3,20 @@ module Celluloid
     class History
       include Celluloid
 
-      def initialize(store = nil, serialization = nil)
+      def self.for_mailbox(mailbox)
+        OPM::History.new
+      end
+
+      def initialize(store = nil)
         @store = store || Store.default
-        @serialization = serialization || Serialization.default
       end
 
       def push(call)
-        opm_call = OPM::Call.for(call)
-        serialized_call = @serialization.dump(opm_call)
-        @store.push serialized_call
+        @store.push OPM::Call.for(call)
       end
 
       def pop
-        serialized_call = @store.pop
-        @serialization.load(serialized_call)
+        @store.pop
       end
     end
   end

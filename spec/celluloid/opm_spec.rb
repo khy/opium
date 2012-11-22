@@ -5,9 +5,6 @@ describe Celluloid::OPM do
     include Celluloid
     include Celluloid::OPM
 
-    opm_store :memory
-    opm_serialization :json
-
     attr_accessor :title
   end
 
