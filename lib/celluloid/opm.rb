@@ -1,5 +1,3 @@
-require 'celluloid/opm/version'
-
 require 'celluloid'
 require 'oj'
 
@@ -8,12 +6,12 @@ require 'celluloid/opm/history'
 require 'celluloid/opm/mailbox'
 require 'celluloid/opm/serialization'
 require 'celluloid/opm/store'
+require 'celluloid/opm/version'
 
 module Celluloid
   module OPM
     def self.included(base)
       base.instance_eval do
-        include Celluloid unless self.is_a?(Celluloid)
         extend ClassMethods
 
         use_mailbox do
