@@ -1,6 +1,8 @@
 module Celluloid
   module OPM
     class History
+      include Celluloid
+
       def initialize(store = nil, serialization = nil)
         @store = store || Store.default
         @serialization = serialization || Serialization.default
