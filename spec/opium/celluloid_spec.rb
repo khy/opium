@@ -1,9 +1,9 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
-describe Celluloid::OPM do
+describe Opium::Celluloid do
   class Document
     include Celluloid
-    include Celluloid::OPM
+    include Opium::Celluloid
 
     attr_accessor :title
   end

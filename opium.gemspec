@@ -1,16 +1,16 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'celluloid/opm/version'
+require 'opium/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = 'celluloid-opm'
-  gem.version       = Celluloid::OPM::VERSION
+  gem.name          = 'opium'
+  gem.version       = Opium::VERSION
   gem.authors       = ['Kevin Hyland']
   gem.email         = ['khy@me.com']
-  gem.description   = 'Simple object prevalence for Celluloid'
-  gem.summary       = 'Celluloid::OPM automatically serializes and persists any calls made on a Celluloid object, allowing for a prevalent system.'
-  gem.homepage      = 'http://github.com/khy/celluloid-opm'
+  gem.description   = 'Simple object prevalence.'
+  gem.summary       = 'Simple object prevalence.'
+  gem.homepage      = 'http://github.com/khy/opium'
 
   gem.files         = `git ls-files`.split($/)
   gem.test_files    = gem.files.grep(/spec/)

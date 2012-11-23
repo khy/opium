@@ -1,12 +1,12 @@
-# Celluloid::OPM
+# Opium
 
-Celluloid::OPM automatically serializes and persists any calls made to a Celluloid object, allowing for a [prevalent system](http://www.ibm.com/developerworks/library/wa-objprev/).
+Simple object prevalence.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'celluloid-opm'
+    gem 'opium'
 
 And then execute:
 
@@ -14,16 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install celluloid-opm
-
-## Usage
-
-    class Document
-      include Celluloid::OPM
-
-      ...
-
-    end
+    $ gem install opium
 
 ## Contributing
 
