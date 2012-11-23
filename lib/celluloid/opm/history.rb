@@ -7,16 +7,20 @@ module Celluloid
         OPM::History.new
       end
 
-      def initialize(store = nil)
-        @store = store || Store.default
+      def initialize(opts = {})
+        @store = opts[:store] || OPM::Store.default
       end
 
-      def push(call)
-        @store.push OPM::Call.for(call)
+      def add(item)
+        @store.add(item)
       end
 
-      def pop
-        @store.pop
+      def last_snapshot
+        @store.find { |item| items.is_a?(OPM::Snapshot) }
+      end
+
+      def messages_since_last_snapshot
+        @store.take_while { |item| !item.is_a?(OPM::Snapshot) }
       end
     end
   end

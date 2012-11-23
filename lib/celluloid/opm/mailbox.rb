@@ -8,7 +8,8 @@ module Celluloid
 
       def <<(message)
         unless message.is_a?(SystemEvent)
-          history.async.push(message)
+          opm_message = OPM::Message.new(message.method, message.arguments)
+          history.async.add(opm_message)
         end
 
         super

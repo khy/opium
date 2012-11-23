@@ -1,11 +1,12 @@
 require 'celluloid'
 require 'oj'
 
-require 'celluloid/opm/call'
 require 'celluloid/opm/history'
 require 'celluloid/opm/mailbox'
+require 'celluloid/opm/message'
 require 'celluloid/opm/serialization/binary'
 require 'celluloid/opm/serialization/json'
+require 'celluloid/opm/snapshot'
 require 'celluloid/opm/store'
 require 'celluloid/opm/version'
 

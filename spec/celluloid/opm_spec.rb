@@ -12,8 +12,8 @@ describe Celluloid::OPM do
     document = Document.new
     document.title = 'This'
     document.title = 'That'
-    last_call = document.mailbox.history.pop
-    last_call.method.should == :title=
-    last_call.arguments.first.should == 'That'
+    message = document.mailbox.history.messages_since_last_snapshot.first
+    message.method.should == :title=
+    message.arguments.first.should == 'That'
   end
 end

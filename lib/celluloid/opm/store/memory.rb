@@ -2,23 +2,29 @@ module Celluloid
   module OPM
     module Store
       class Memory
-        include Store
+        include Enumerable
 
-        def initialize(opts = {})
+        @stores = {}
+        @mutex = Mutex.new
+
+        def self.for_history(history)
+          @mutex.synchronize do
+            @stores[history.object_id] ||= Store::Memory.new(history)
+            @stores[history.object_id]
+          end
+        end
+
+        def initialize
           @array = []
           @mutex = Mutex.new
-          @serialization = opts[:serialization] || OPM::Serialization::Binary
         end
 
-        def push(message)
-          serialized_message = @serialization.dump(message)
-          @mutex.synchronize { @array.push serialized_message }
+        def add(item)
+          @mutex.synchronize { @array.unshift(item) }
         end
 
-        def pop
-          if serialized_message = @mutex.synchronize { @array.pop }
-            @serialization.load serialized_message
-          end
+        def each(&block)
+          @mutex.synchronize { @array.each(&block) }
         end
       end
     end
